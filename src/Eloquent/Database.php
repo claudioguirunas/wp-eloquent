@@ -108,6 +108,8 @@ class Database implements ConnectionInterface {
             return $query;
         }
 
+        $query = preg_replace('/\?/', "__BINDING__", $query);
+
         if ( $bindings ) {
             foreach ( $bindings as $replace ) {
                 if ( is_string( $replace ) ) {
@@ -117,9 +119,9 @@ class Database implements ConnectionInterface {
                 }
 
                 if ( ! $update ) {
-                    $query = preg_replace('/\?/', $replace, $query, 1);
+                    $query = preg_replace('/__BINDING__/', $replace, $query, 1);
                 } else {
-                    $query = preg_replace('/= \?/', '= ' . $replace, $query, 1);
+                    $query = preg_replace('/= __BINDING__/', '= ' . $replace, $query, 1);
                 }
             }
         }
