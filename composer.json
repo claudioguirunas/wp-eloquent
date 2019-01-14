@@ -1,8 +1,8 @@
 {
-    "name": "isobarie/wp-eloquent",
+    "name": "claudioguirunas/wp-eloquent",
     "description": "Eloquent ORM for WordPress - fork of https://github.com/tareq1988/wp-eloquent",
     "keywords": ["wordpress", "plugin", "orm", "eloquent", "sql"],
-    "homepage": "https://github.com/isobarie/wp-eloquent",
+    "homepage": "https://github.com/claudioguirunas/wp-eloquent",
     "require": {
         "illuminate/database": "~5.0"
     },
